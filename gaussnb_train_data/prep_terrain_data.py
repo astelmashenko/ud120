@@ -7,12 +7,18 @@ def makeTerrainData(n_points=1000):
 ### make the toy dataset
     random.seed(42)
     grade = [random.random() for ii in range(0,n_points)]
+    # print grade
     bumpy = [random.random() for ii in range(0,n_points)]
+    # print bumpy
     error = [random.random() for ii in range(0,n_points)]
+    # print error
     y = [round(grade[ii]*bumpy[ii]+0.3+0.1*error[ii]) for ii in range(0,n_points)]
+    # print y
     for ii in range(0, len(y)):
         if grade[ii]>0.8 or bumpy[ii]>0.8:
             y[ii] = 1.0
+
+    # print y
 
 ### split into train/test sets
     X = [[gg, ss] for gg, ss in zip(grade, bumpy)]
