@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 .idea
 resources/test.png
+gaussnb_train_data/test.png
